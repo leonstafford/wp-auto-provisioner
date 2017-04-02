@@ -26,7 +26,9 @@ KIPP - Keep It Painless, Protagonist
 # Provisioning options
 
  - Docker + shell
- - Vagrant + VirtualBox + Ansible
+ - Docker + Ansible
+
+*removing Vagrant / VirtualBox to reduce complexity*
 
 # Custom templates per project
 
@@ -48,9 +50,9 @@ As you can see from above, it's far from receptive of a "one-size fits all" envi
 *BDD style here, this is what I expect, not what exists:*
 
  - clone this project
- - clone your WordPress theme or plugin to another location (outside of this project's root)
- - `cp template-wp-latest-plugin-development.sh templates/yourpluginname.sh`
-  - run `./templates/yourprojectname.sh PATH_TO_YOUR_PLUGIN`
+   clone your WordPress theme or plugin to another location (outside of this project's root)
+ - `cp -r sample-templates/wp-latest-plugin-development templates/yourtemplatename`
+  - run `./provisioner.sh TEMPLATE PATH_TO_YOUR_PLUGIN`
  - project is now up and running at the address output in previous command
 
 Optionally, create alias `wpap`, allowing you to run `wpap PATH_TO_YOUR_PLUGIN` from wherever you are. 

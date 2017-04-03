@@ -56,3 +56,5 @@ As you can see from above, it's far from receptive of a "one-size fits all" envi
  - project is now up and running at the address output in previous command
 
 Optionally, create alias `wpap`, allowing you to run `wpap PATH_TO_YOUR_PLUGIN` from wherever you are. 
+
+`alias wpap="/path/to/wp-auto-provisioner/provisioner.sh"`

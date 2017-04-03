@@ -33,4 +33,22 @@ else
     exit 1
 fi
 
-# rest of provisioning follows here in template
+# load env vars from template
+
+source $SCRIPT_DIR_FULL/templates/$TEMPLATE_NAME/options.env
+
+echo env vars loaded:
+
+env | grep WPAP_
+
+
+
+# check above options are matched in matrix 
+
+#DOCKER_IMAGE=$('SOMETHING_BASED_ON_CONFIG_CHECK')
+
+# check dependencies for provisioning are met
+
+# do we have docker? 
+
+#  

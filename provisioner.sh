@@ -42,13 +42,11 @@ echo env vars loaded:
 env | grep WPAP_
 
 
-
-# check above options are matched in matrix 
-
 #DOCKER_IMAGE=$('SOMETHING_BASED_ON_CONFIG_CHECK')
 
 # check dependencies for provisioning are met
 
 # do we have docker? 
+command -v docker >/dev/null 2>&1 || { echo >&2 "docker not found, please install"; exit 1; }
 
 #  

@@ -53,4 +53,10 @@ command -v docker >/dev/null 2>&1 || { echo >&2 "docker not found, please instal
 # create temporary Dockerfile in template folder
 touch $TEMPLATE_DIR/Dockerfile
 
+# populate Docker file
+echo "FROM $WPAP_DOCKER_WEB_IMAGE" > $TEMPLATE_DIR/Dockerfile
+
+# build and tag Docker image for web
+sudo docker build -t leonstafford/${WPAP_CONTAINER_PREFIX}web:latest $TEMPLATE_DIR
+
 

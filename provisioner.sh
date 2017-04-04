@@ -16,9 +16,10 @@ echo "Running WP Auto Provisioning script installed at $SCRIPT_DIR_FULL"
 # assign vars from args
 TEMPLATE_NAME=$1
 PROJECT_PATH=$2
+TEMPLATE_DIR="$SCRIPT_DIR_FULL/templates/$TEMPLATE_NAME"
 
 # check template exists and not empty
-if find "$SCRIPT_DIR_FULL/templates/$TEMPLATE_NAME" -mindepth 1 -print -quit | grep -q .; then
+if find $TEMPLATE_DIR -mindepth 1 -print -quit | grep -q .; then
     echo Using template: $TEMPLATE_NAME
 else
     echo The directory $TEMPLATE_NAME is empty '(or non-existent)'
@@ -49,4 +50,7 @@ env | grep WPAP_
 # do we have docker? 
 command -v docker >/dev/null 2>&1 || { echo >&2 "docker not found, please install"; exit 1; }
 
-#  
+# create temporary Dockerfile in template folder
+touch $TEMPLATE_DIR/Dockerfile
+
+
